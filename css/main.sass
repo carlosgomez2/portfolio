@@ -1,0 +1,297 @@
+// Normalize
+@import normalize
+
+// Color Variables
+$Blue:			#2c3e50
+$Blue-hover:	#33485d
+$Red:			#e74c3c
+$Red-hover:	#c0392b
+$Yellow:		#f1c40f
+$Yellow-hover:	#f39c12
+$Green:		#1abc9c
+$Green-hover:	#16a085
+$Purple:		#9b59b6
+$Purple-hover:	#8e44ad
+$Gray:			#CFCFD4
+$White:		#F1F5F9
+$Black:			#000000
+//  Social
+$Blue-fb:		#3b5998
+$Blue-tw:		#00aced
+
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,800|Open+Sans:400,400italic)
+$Os: 'Open Sans', sans-serif
+$Dosis: 'Dosis', sans-serif
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+.logo-title
+	font-family: $Dosis
+	font-weight: 800
+	font-size: 4em
+	// margin-left: 3em !important
+
+
+// .logo-svg
+// 	height: 6em
+// 	width: 6em
+
+.container
+	background: $Blue
+	width: 90%
+	max-width: 1000px
+	margin: auto
+
+	// Flexbox
+	display: flex 
+	flex-flow: row wrap
+
+.transition-link
+	transition: 0.5s
+
+.title
+	font-weight: 800
+
+.menu-fixed
+	position: fixed
+	left: -1px
+	right: -1px
+	top: 0
+	z-index: 1000
+	width: 90%
+	margin: 0 auto
+	max-width: 1001px !important
+	transition: 0.2s
+	opacity: 0.9
+	// Link of nav
+	a
+		padding: 0px
+
+h1, h2, h3, h4, h5
+	font-family: $Dosis
+	font-weight: 800
+	margin: 0 0 23px 0
+
+p
+	font-family: $Os
+	text-align: justify
+
+body
+	background: $Gray
+
+header
+	background: $Blue-hover
+	width: 100%
+	padding: 20px
+
+	// Flexbox
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-direction: row
+	flex-wrap: wrap
+
+header
+	logo
+		color: $White
+		font-size: 1.8em
+	img
+		width: 50px
+		vertical-align: top
+
+	a
+		color: $White
+		text-decoration: none
+		line-height: 50px
+	
+	nav
+		width: 50%
+		transition: 0.2s
+
+		// Flexbox
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+
+		a
+			background: $Green
+			color: $White
+			text-align: center
+			text-decoration: none
+			padding: 10px
+
+			// Flexbox
+			flex-grow: 1
+			&:hover
+				background: $Green-hover
+
+		ul > li
+			display: none
+
+aside
+	background: $Yellow
+	padding: 20px
+
+	// Flexbox
+	flex: 1 1 30%
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+	justify-content: flex-start
+
+	// div del widget
+	.widget-1 
+		height: 150px
+		margin-bottom: 1em
+		// change image for project 1
+		background-image: url('../images/project-1.jpg')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		text-align: center
+
+	.widget-2 
+		height: 150px
+		margin-bottom: 1em
+		// change image for project 2
+		background-image: url('../images/project-2.jpg')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		text-align: center
+
+	.img-text 
+		color: $White
+		text-align: center
+		font-family: $Dosis
+		font-weight: 800
+		font-size: 1.6rem
+		margin: 50px auto
+		padding: 15px
+		background: rgba(0,0,0,0.4)
+
+.main
+	background: $White
+	padding: 20px
+
+	// Flexbox
+	flex: 1 1 70%
+
+	article
+		margin-bottom: 20px
+		padding-bottom: 20px
+		border-bottom: 1px solid $Blue
+		&:nth-last-child(1)
+			margin-bottom: 0
+			padding-bottom: 0
+			border-bottom: none
+
+footer
+	background: $Blue-hover
+	width: 100%
+	padding: 20px
+
+	// Flexbox
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+
+	.links
+		background: $Green
+		display: flex
+		flex-wrap: wrap
+
+		a
+			flex-grow: 1
+			color: $White
+			padding: 10px
+			text-align: center
+			text-decoration: none
+
+			&:hover
+				background: $Green-hover
+
+	.footer-bottom
+		color: $White
+		text-align: center
+		width: 100%
+		font-family: $Os
+		font-size: 0.75em
+		padding-top: 1em
+
+.social
+	background: $Yellow
+
+	a
+		color: $White
+		text-decoration: none
+		padding: 10px
+		display: inline-block
+
+		&:hover
+			background: $Yellow-hover
+
+		.fa-facebook
+			color: $Blue-fb !important
+
+		.fa-twitter
+			color: $Blue-tw !important
+
+		.fa-github
+			color: $Black !important
+
+
+@media screen and (max-width: 814px)
+	.container
+		flex-direction: column
+
+	header
+		flex-direction: column
+		padding: 0
+
+		.logo
+			margin: 10px 0
+
+		nav
+			width: 100%
+
+		aside
+			flex-direction: row
+			flex: 0
+
+			.widget
+				flex-grow: 1
+
+@media screen and (max-width: 600px)
+	// aside
+	// 	flex-direction: column
+	.menu-fixed
+		width: 100% !important
+	
+	.container
+		width: 100%
+
+	footer
+		justify-content: space-around
+
+@media screen and (max-width: 429px)
+	.social
+		margin-top: 1em
+
+@media screen and (max-width: 359px)
+	footer
+		padding: 0 0 1em 0
+
+	.links
+		width: 100%
+
+	.Nav-link, .Foot-link
+		padding: 0 !important
+
+	.Foot-link
+		line-height: 50px
